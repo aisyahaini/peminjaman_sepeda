@@ -11,7 +11,7 @@ df = pd.read_csv("dataset_cleaned.csv")
 df = df.dropna(subset=['weathersit', 'cnt'])
 
 # Judul aplikasi
-st.title("Analisis dan Prediksi Jumlah Peminjaman Sepeda")
+st.title("Analisis Jumlah Peminjaman Sepeda")
 
 # Memilih parameter analisis
 st.sidebar.title("Parameter Analisis")
