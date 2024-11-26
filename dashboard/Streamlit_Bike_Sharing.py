@@ -6,10 +6,11 @@ import matplotlib.pyplot as plt
 
 
 # Data dibaca dari file CSV
-df = pd.read_csv("dashboard\dataset_cleaned.csv")
+df = pd.read_csv("dashboard/dataset_cleaned.csv", delimiter=',')
+df.columns = df.columns.str.strip()
 
 # Pastikan tidak ada nilai kosong pada kolom 'weathersit' dan 'cnt'
-df = df.dropna(subset=['weathersit', 'cnt'])
+#df = df.dropna(subset=['weathersit', 'cnt'])
 
 # Judul aplikasi
 st.title("Analisis Jumlah Peminjaman Sepeda")
