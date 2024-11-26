@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')  # Backend tanpa GUI
 import matplotlib.pyplot as plt
-
 
 
 # Data dibaca dari file CSV
