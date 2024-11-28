@@ -1,1 +1,3 @@
 link deploy: https://jumlah-peminjaman-sepeda.streamlit.app/
+
+link github: https://github.com/aisyahaini/peminjaman_sepeda
