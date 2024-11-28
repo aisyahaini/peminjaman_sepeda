@@ -68,7 +68,12 @@ visualisasi_option = st.selectbox(
 if visualisasi_option == "Visualisasi Cuaca":
     fig, ax = plt.subplots()
     if not filtered_data.empty:
+        # Mengelompokkan data berdasarkan cuaca dan menghitung rata-rata
         grouped = filtered_data.groupby('weathersit')['cnt'].mean()
+        
+        # Mengganti indeks angka menjadi label deskriptif
+        grouped.index = grouped.index.map({1: "Cerah/Mendung", 2: "Berkabut/Gerimis", 3: "Hujan Ringan/Snow"})
+        
         grouped.plot(kind='bar', ax=ax, color='skyblue')
 
         # Menambahkan angka di atas setiap batang
@@ -78,9 +83,14 @@ if visualisasi_option == "Visualisasi Cuaca":
         ax.set_title("Rata-rata Peminjaman Berdasarkan Cuaca")
         ax.set_xlabel("Cuaca")
         ax.set_ylabel("Rata-rata Peminjaman")
+
+        # Membuat label x horizontal
+        ax.set_xticklabels(grouped.index, rotation=0)
     else:
         st.write("Data tidak ditemukan untuk filter yang dipilih")
     st.pyplot(fig)
+
+
 
 elif visualisasi_option == "Hubungan Suhu dan Peminjaman":
     fig, ax = plt.subplots()
