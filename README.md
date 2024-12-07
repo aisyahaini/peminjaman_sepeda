@@ -34,7 +34,7 @@ File requirements.txt berisi banyak library yang langsung dapat diinstall
 #### 1. Memastikan file yang berisi dashboard Streamlit disimpan dimana dengan mencari directory path, misalnya seperti ini 
 `dashboard/Streamlit_Bike_Sharing.py`
 #### 2. Running Streamlit App dengan syntax berikut:
-`streamlit run dashnboard/Streamlit_Bike_Sharing.py`
+`streamlit run dashboard/Streamlit_Bike_Sharing.py`
 
 
 ## Author
